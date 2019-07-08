@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -583,6 +586,7 @@ public class Stat extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -1169,3 +1173,5 @@ public class Stat extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

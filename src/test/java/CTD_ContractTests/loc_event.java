@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -667,6 +670,7 @@ public class loc_event extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -1337,3 +1341,5 @@ public class loc_event extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

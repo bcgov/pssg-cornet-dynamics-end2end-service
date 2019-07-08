@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_Extent_Report;
 
 import java.sql.Date;
@@ -42,6 +45,7 @@ public class extentreport {
 		extent.flush();
 	}
 }
+<<<<<<< HEAD
 =======
 package CTD_Extent_Report;
 
@@ -87,3 +91,5 @@ public class extentreport {
 	}
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

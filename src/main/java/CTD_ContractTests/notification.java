@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.File;
@@ -118,6 +121,7 @@ public class notification extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -239,3 +243,5 @@ public class notification extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

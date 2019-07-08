@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -717,6 +720,7 @@ public class disc_chrg extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -1437,3 +1441,5 @@ public class disc_chrg extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

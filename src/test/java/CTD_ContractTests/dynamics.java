@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -73,6 +76,7 @@ public class dynamics {
 		System.out.println(access_token);
 	}
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -149,3 +153,5 @@ public class dynamics {
 	}
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

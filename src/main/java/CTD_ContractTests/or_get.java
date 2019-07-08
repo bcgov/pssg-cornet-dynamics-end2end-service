@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import io.restassured.RestAssured;
@@ -911,6 +914,7 @@ public class or_get extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -1825,3 +1829,5 @@ public class or_get extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

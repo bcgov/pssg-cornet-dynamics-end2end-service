@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import org.testng.annotations.Test;
@@ -572,6 +575,7 @@ public class Adapter extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -1147,3 +1151,5 @@ public class Adapter extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

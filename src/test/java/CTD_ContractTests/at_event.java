@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.awt.Event;
@@ -299,6 +302,7 @@ public class at_event extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -601,3 +605,5 @@ public class at_event extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

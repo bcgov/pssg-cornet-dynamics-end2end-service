@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
@@ -32,6 +35,7 @@
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
@@ -67,3 +71,5 @@
   </suite> <!-- Default suite -->
 </testng-results>
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

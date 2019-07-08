@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -50,6 +53,7 @@ public class inscscliefn {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -103,3 +107,5 @@ public class inscscliefn {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

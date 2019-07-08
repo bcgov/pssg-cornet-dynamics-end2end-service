@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -281,6 +284,7 @@ public class Transrea extends extentreport {
 		conn.close();
 	}
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -565,3 +569,5 @@ public class Transrea extends extentreport {
 	}
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

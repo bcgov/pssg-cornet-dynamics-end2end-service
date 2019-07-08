@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.FileInputStream;
@@ -58,6 +61,7 @@ public class delete_events {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -119,3 +123,5 @@ public class delete_events {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

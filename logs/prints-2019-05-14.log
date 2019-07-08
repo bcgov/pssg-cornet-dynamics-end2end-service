@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< master
 16:34:39.073 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
 16:37:47.651 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
@@ -7,3 +8,8 @@
 16:37:47.651 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
 16:39:34.812 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
 >>>>>>> Sync with Master
+=======
+16:34:39.073 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
+16:37:47.651 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
+16:39:34.812 [main] ERROR CTD.Unprocessed_Events_Endpoint_ValidationTest - client number not available in the unprocessed events response body for the timestamp and event type requested
+>>>>>>> Dev

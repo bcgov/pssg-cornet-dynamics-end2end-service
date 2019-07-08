@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 $(document).ready(function() {
     $('a.navigator-link').click(function() {
         // Extract the panel for this link
@@ -121,6 +124,7 @@ function drawTable() {
         });
     }
 }
+<<<<<<< HEAD
 =======
 $(document).ready(function() {
     $('a.navigator-link').click(function() {
@@ -245,3 +249,5 @@ function drawTable() {
     }
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev

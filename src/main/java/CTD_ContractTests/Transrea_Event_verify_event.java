@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> Dev
 package CTD_ContractTests;
 
 import java.io.File;
@@ -201,6 +204,7 @@ public class Transrea_Event_verify_event extends extentreport {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package CTD_ContractTests;
 
@@ -405,3 +409,5 @@ public class Transrea_Event_verify_event extends extentreport {
 
 }
 >>>>>>> Sync with Master
+=======
+>>>>>>> Dev
