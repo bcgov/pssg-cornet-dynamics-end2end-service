@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="102807" started-at="2019-07-08T20:56:54Z" finished-at="2019-07-08T20:58:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="102807" started-at="2019-07-08T20:56:54Z" finished-at="2019-07-08T20:58:37Z">
+      <class name="CTD_E2E.ins">
+        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_E2E.ins@10bdf5e5]" name="setup" is-config="true" duration-ms="148" started-at="2019-07-08T20:56:54Z" finished-at="2019-07-08T20:56:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_E2E.ins@10bdf5e5]" name="jdbc" is-config="true" duration-ms="1100" started-at="2019-07-08T20:56:54Z" finished-at="2019-07-08T20:56:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- jdbc -->
+        <test-method status="PASS" signature="insert()[pri:0, instance:CTD_E2E.ins@10bdf5e5]" name="insert" duration-ms="101634" started-at="2019-07-08T20:56:55Z" finished-at="2019-07-08T20:58:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insert -->
+        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_E2E.ins@10bdf5e5]" name="jdbcclose" is-config="true" duration-ms="57" started-at="2019-07-08T20:58:37Z" finished-at="2019-07-08T20:58:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- jdbcclose -->
+        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_E2E.ins@10bdf5e5]" name="extentteardown" is-config="true" duration-ms="218" started-at="2019-07-08T20:58:37Z" finished-at="2019-07-08T20:58:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentteardown -->
+      </class> <!-- CTD_E2E.ins -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
