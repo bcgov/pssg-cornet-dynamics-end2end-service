@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+<<<<<<< master
 15:23:20.649 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
 15:23:39.359 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
 15:23:57.749 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+=======
+15:23:20.649 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+15:23:39.359 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+15:23:57.749 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+>>>>>>> Sync with Master
+=======
+15:23:20.649 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+15:23:39.359 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+15:23:57.749 [main] INFO  CTD.Unprocessed_Events_Endpoint_ValidationTest - client number available in the unprocessed events response body for the timestamp and event type requested
+>>>>>>> Dev
