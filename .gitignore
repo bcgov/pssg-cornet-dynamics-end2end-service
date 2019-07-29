@@ -1,0 +1,5 @@
+/target/
+**/Dynamic_Adapter_RequestJSON
+/test-output/HtmlTestResults.html
+/src/test/java/Cliemrg/
+**/Properties
