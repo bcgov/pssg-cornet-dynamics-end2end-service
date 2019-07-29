@@ -55,7 +55,7 @@ public class disc_chrg_reg extends extentreport {
 	}
 
 	@Test
-	public void cms_regulations() throws ParseException, IOException, SQLException, ClassNotFoundException {
+	public void cs_regs() throws ParseException, IOException, SQLException, ClassNotFoundException {
 
 		Statement s = conn.createStatement();
 		Statement f = conn.createStatement();
@@ -115,7 +115,7 @@ public class disc_chrg_reg extends extentreport {
 						idstring = String.valueOf(id);
 
 						childTest.log(Status.INFO, MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
-						childTest.log(Status.INFO, "The following was inserted into cms_move_reason_types");
+						childTest.log(Status.INFO, "The following was inserted");
 						String[][] requestchosen = {
 								{ "ID", "CODE", "DESC", "eff_dt", "exp_dt", "use_adults_yn",
 										"use_youths_yn", "TIMEST" },
@@ -167,7 +167,7 @@ public class disc_chrg_reg extends extentreport {
 							idstring = String.valueOf(id);
 							
 							childTest.log(Status.INFO, MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
-							childTest.log(Status.INFO, "The following was inserted into cms_move_reason_types");
+							childTest.log(Status.INFO, "The following was inserted");
 							String[][] cdchangedto = {
 									{ "ID", "CODE", "DESC", "eff_dt", "exp_dt", "use_adults_yn",
 										"use_youths_yn", "TIMEST" },
@@ -220,7 +220,7 @@ public class disc_chrg_reg extends extentreport {
 
 								childTest.log(Status.INFO,
 										MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
-								childTest.log(Status.INFO, "The following was inserted into cms_move_reason_types");
+								childTest.log(Status.INFO, "The following was inserted");
 								String[][] dscchangedto = {
 										{ "ID", "CODE", "DESC", "eff_dt", "exp_dt", "use_adults_yn",
 											"use_youths_yn", "TIMEST" },
@@ -273,7 +273,7 @@ public class disc_chrg_reg extends extentreport {
 
 									childTest.log(Status.INFO,
 											MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
-									childTest.log(Status.INFO, "The following was inserted into cms_move_reason_types");
+									childTest.log(Status.INFO, "The following was inserted");
 									String[][] effective_dtchangedto = {
 											{ "ID", "CODE", "DESC", "eff_dt", "exp_dt", "use_adults_yn",
 												"use_youths_yn", "TIMEST" },
@@ -327,7 +327,7 @@ public class disc_chrg_reg extends extentreport {
 										childTest.log(Status.INFO,
 												MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
 										childTest.log(Status.INFO,
-												"The following was inserted into cms_move_reason_types");
+												"The following was inserted");
 										String[][] expiry_dtchangedto = {
 												{ "ID", "CODE", "DESC", "eff_dt", "exp_dt", "use_adults_yn",
 													"use_youths_yn", "TIMEST" },
@@ -404,7 +404,7 @@ public class disc_chrg_reg extends extentreport {
 
 					}
 				} catch (SQLException e) {
-					s.executeQuery("delete from cms_regulations where cd in ('21VNZ', '21AZ' )");
+					s.executeQuery(prop.getProperty("disc_chrg_reg_del"));
 					conn.commit();
 					if (++count == maxtries)
 						throw e;
