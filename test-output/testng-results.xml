@@ -2,43 +2,43 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23883" started-at="2019-11-18T20:57:47Z" finished-at="2019-11-18T20:58:11Z">
+  <suite name="Default suite" duration-ms="176008" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23883" started-at="2019-11-18T20:57:47Z" finished-at="2019-11-18T20:58:11Z">
-      <class name="CTD_ContractTests.disciplinaryChargeRegulation">
-        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="setup" is-config="true" duration-ms="727" started-at="2019-11-18T20:57:46Z" finished-at="2019-11-18T20:57:47Z">
+    <test name="Default test" duration-ms="176008" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:35Z">
+      <class name="CTD_ContractTests.location">
+        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="setup" is-config="true" duration-ms="197" started-at="2019-11-18T21:58:38Z" finished-at="2019-11-18T21:58:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="jdbc" is-config="true" duration-ms="733" started-at="2019-11-18T20:57:47Z" finished-at="2019-11-18T20:57:48Z">
+        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="jdbc" is-config="true" duration-ms="655" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T21:58:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- jdbc -->
-        <test-method status="PASS" signature="cs_regs()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="cs_regs" duration-ms="23057" started-at="2019-11-18T20:57:48Z" finished-at="2019-11-18T20:58:11Z">
+        <test-method status="PASS" signature="locaevent()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="locaevent" duration-ms="175284" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cs_regs -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="tearDown" is-config="true" duration-ms="5" started-at="2019-11-18T20:58:11Z" finished-at="2019-11-18T20:58:11Z">
+        </test-method> <!-- locaevent -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="tearDown" is-config="true" duration-ms="2" started-at="2019-11-18T22:01:34Z" finished-at="2019-11-18T22:01:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cs_regs status=SUCCESS method=disciplinaryChargeRegulation.cs_regs()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33] output={null}]]]>
+                <![CDATA[[TestResult name=locaevent status=SUCCESS method=location.locaevent()[pri:0, instance:CTD_ContractTests.location@173f9fc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="jdbcclose" is-config="true" duration-ms="54" started-at="2019-11-18T20:58:11Z" finished-at="2019-11-18T20:58:11Z">
+        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="jdbcclose" is-config="true" duration-ms="49" started-at="2019-11-18T22:01:34Z" finished-at="2019-11-18T22:01:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- jdbcclose -->
-        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_ContractTests.disciplinaryChargeRegulation@1a5fe33]" name="extentteardown" is-config="true" duration-ms="286" started-at="2019-11-18T20:58:11Z" finished-at="2019-11-18T20:58:11Z">
+        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="extentteardown" is-config="true" duration-ms="456" started-at="2019-11-18T22:01:35Z" finished-at="2019-11-18T22:01:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentteardown -->
-      </class> <!-- CTD_ContractTests.disciplinaryChargeRegulation -->
+      </class> <!-- CTD_ContractTests.location -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
