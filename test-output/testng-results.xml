@@ -2,43 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="125715" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:35:31Z">
+  <suite name="Default suite" duration-ms="122908" started-at="2019-11-22T19:18:31Z" finished-at="2019-11-22T19:20:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="125715" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:35:31Z">
-      <class name="CTD_E2E.transferReason">
-        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="setup" is-config="true" duration-ms="148" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:33:26Z">
+    <test name="Default test" duration-ms="122908" started-at="2019-11-22T19:18:31Z" finished-at="2019-11-22T19:20:34Z">
+      <class name="CTD_ContractTests.createIAEvent">
+        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_ContractTests.createIAEvent@c03f1f]" name="setup" is-config="true" duration-ms="135" started-at="2019-11-22T19:18:31Z" finished-at="2019-11-22T19:18:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="jdbc" is-config="true" duration-ms="4745" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:33:30Z">
+        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_ContractTests.createIAEvent@c03f1f]" name="jdbc" is-config="true" duration-ms="624" started-at="2019-11-22T19:18:31Z" finished-at="2019-11-22T19:18:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- jdbc -->
-        <test-method status="PASS" signature="cdchanges()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="cdchanges" duration-ms="120866" started-at="2019-11-22T16:33:30Z" finished-at="2019-11-22T16:35:31Z">
+        <test-method status="PASS" signature="insertnotifications()[pri:0, instance:CTD_ContractTests.createIAEvent@c03f1f]" name="insertnotifications" duration-ms="122270" started-at="2019-11-22T19:18:32Z" finished-at="2019-11-22T19:20:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cdchanges -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="tearDown" is-config="true" duration-ms="3" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=cdchanges status=SUCCESS method=transferReason.cdchanges()[pri:0, instance:CTD_E2E.transferReason@1e3c938] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="jdbcclose" is-config="true" duration-ms="64" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- jdbcclose -->
-        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="extentteardown" is-config="true" duration-ms="323" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:32Z">
+        </test-method> <!-- insertnotifications -->
+        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_ContractTests.createIAEvent@c03f1f]" name="extentteardown" is-config="true" duration-ms="264" started-at="2019-11-22T19:20:34Z" finished-at="2019-11-22T19:20:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentteardown -->
-      </class> <!-- CTD_E2E.transferReason -->
+      </class> <!-- CTD_ContractTests.createIAEvent -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
