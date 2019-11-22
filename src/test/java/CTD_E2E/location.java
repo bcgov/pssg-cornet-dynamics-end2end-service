@@ -93,6 +93,8 @@ public class location extends extentreport {
 				
 				s.executeQuery(prop.getProperty("location_catch_delete"));
 				conn.commit();
+				
+				break True;
 
 			} catch (SQLException e) {
 				s.executeQuery(prop.getProperty("location_catch_delete"));
@@ -204,6 +206,10 @@ public class location extends extentreport {
 							"waited for 100 seconds and could not get a 200 status code from Dynamics. Please verify the problem and complete the test");
 				}
 
+			}
+			else
+			{
+				break exit;
 			}
 		}
 

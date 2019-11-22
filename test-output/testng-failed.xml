@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CTD_ContractTests.disciplinaryCharge">
+      <class name="CTD_E2E.transfer">
         <methods>
+          <include name="tearDown"/>
           <include name="jdbcclose"/>
-          <include name="charge_dtchangedpast5yrstolast5yrs"/>
+          <include name="insert"/>
           <include name="extentteardown"/>
           <include name="jdbc"/>
-          <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- CTD_ContractTests.disciplinaryCharge -->
+      </class> <!-- CTD_E2E.transfer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

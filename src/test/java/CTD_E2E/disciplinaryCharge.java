@@ -235,6 +235,10 @@ public class disciplinaryCharge extends extentreport {
 				}
 
 			}
+			else
+			{
+				break exit;
+			}
 
 		}
 

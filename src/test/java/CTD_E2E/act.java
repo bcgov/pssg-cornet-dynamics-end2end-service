@@ -130,6 +130,8 @@ public class act extends extentreport {
 					verifyNameInDynamics(access_token);
 
 					deleteevent.delete();
+					
+					break True;
 
 				}
 
@@ -188,6 +190,10 @@ public class act extends extentreport {
 							"waited for 100 seconds and could not get a 200 status code from Dynamics. Please verify the problem and complete the test");
 				}
 
+			}
+			else
+			{
+				break exit;
 			}
 		}
 

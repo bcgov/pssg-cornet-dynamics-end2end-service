@@ -35,7 +35,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class transferReason extends extentreport {
-	
+
 	public String username;
 	public String password;
 	public Connection conn;
@@ -49,7 +49,7 @@ public class transferReason extends extentreport {
 	notification n = new notification();
 	Adapter da = new Adapter();
 	inscscliefn insc = new inscscliefn();
-	
+
 	public String access_token;
 	public dynamics dy = new dynamics();
 
@@ -70,7 +70,8 @@ public class transferReason extends extentreport {
 	}
 
 	@Test
-	public void cdchanges() throws SQLException, IOException, ParseException, ClassNotFoundException, InterruptedException {
+	public void cdchanges()
+			throws SQLException, IOException, ParseException, ClassNotFoundException, InterruptedException {
 
 		Statement s = conn.createStatement();
 
@@ -86,62 +87,55 @@ public class transferReason extends extentreport {
 		String TYPE = "TRANS_RSN";
 
 		String gd = null;
-		int count=0;
-		int maxtries=2;
+		int count = 0;
+		int maxtries = 2;
 
-		try {
-			parentTest = extent.createTest(prop.getProperty("Transrea_cdchanges_parent_extent"));
-			childTest = parentTest.createNode("INSERT");
-			parentTest.assignCategory("Trans_rea_category");
+		parentTest = extent.createTest(prop.getProperty("Transrea_cdchanges_parent_extent"));
+		childTest = parentTest.createNode("INSERT");
+		parentTest.assignCategory("Trans_rea_category");
 
-			System.out.println("..");
+		System.out.println("..");
 
-			exit: while (true) {
-				try {
-					s.executeQuery(prop.getProperty("Transrea_cdchanges_oneinsert"));
+		exit: while (true) {
+			try {
+				s.executeQuery(prop.getProperty("Transrea_cdchanges_oneinsert"));
+				conn.commit();
+
+				rs = s.executeQuery(prop.getProperty("Transrea_cdchanges_oneselect"));
+				if (rs.next()) {
+					TIMEST = rs.getString("TIMEST");
+					code = rs.getString("code");
+					descr = rs.getString("descr");
+					childTest.log(Status.INFO, MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
+					childTest.log(Status.INFO, "The following was inserted");
+					String[][] requestchosen = { { prop.getProperty("CNO"), "DESCR", "ENT_DT" },
+							{ code, descr, TIMEST } };
+					m = MarkupHelper.createTable(requestchosen);
+					childTest.log(Status.INFO, m);
+
+					Thread.sleep(120000L);
+
+					verifyNameInDynamics(access_token, code);
+
+					s.executeQuery(prop.getProperty("transrea_cdchanges_catch_del"));
 					conn.commit();
 
-					rs = s.executeQuery(prop.getProperty("Transrea_cdchanges_oneselect"));
-					if (rs.next()) {
-						TIMEST = rs.getString("TIMEST");
-						code = rs.getString("code");
-						descr = rs.getString("descr");
-						childTest.log(Status.INFO, MarkupHelper.createLabel("Step: Event Trigger", colour.BLUE));
-						childTest.log(Status.INFO, "The following was inserted");
-						String[][] requestchosen = { { prop.getProperty("CNO"), "DESCR", "ENT_DT" },
-								{ code, descr, TIMEST } };
-						m = MarkupHelper.createTable(requestchosen);
-						childTest.log(Status.INFO, m);
-						
-						Thread.sleep(120000L);
-						
-						
-						verifyNameInDynamics(access_token, code);
-						
-						s.executeQuery(prop.getProperty("transrea_cdchanges_catch_del"));
-						conn.commit();
+					break exit;
 
-					}
-
-				} catch (SQLException e) {
-					if(++count==maxtries)
-						throw e;
-					else {
-						s.executeQuery(prop.getProperty("transrea_cdchanges_catch_del"));
-						conn.commit();
-					}
-					
 				}
-			}
-		} finally {
-			s.close();
-			rs.close();
-			rsup.close();
-			rsupdsc.close();
 
+			} catch (SQLException e) {
+				if (++count == maxtries)
+					throw e;
+				else {
+					s.executeQuery(prop.getProperty("transrea_cdchanges_catch_del"));
+					conn.commit();
+				}
+
+			}
 		}
 	}
-	
+
 	public void verifyNameInDynamics(String access_token, String id) throws InterruptedException {
 		int count = 0;
 		int maxtries = 5;
@@ -186,6 +180,8 @@ public class transferReason extends extentreport {
 							"waited for 100 seconds and could not get a 200 status code from Dynamics. Please verify the problem and complete the test");
 				}
 
+			} else {
+				break exit;
 			}
 		}
 
