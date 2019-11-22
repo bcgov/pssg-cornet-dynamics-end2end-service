@@ -94,7 +94,7 @@ public class cl extends extentreport{
 			
 			payload=payload.replaceAll("\\{escapetwo\\}", "\\\\");
 			
-			Thread.sleep(40000L);
+			Thread.sleep(100000L);
 			
 			given().headers("Authorization", "Bearer " + access_token, "Content-Type", ContentType.JSON)
 			.body(payload).when().post(prop.getProperty("dtc_edpt")).then().assertThat()

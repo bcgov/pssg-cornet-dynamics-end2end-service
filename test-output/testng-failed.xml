@@ -3,16 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CTD_E2E.transfer">
+      <class name="CTD_ContractTests.createIAEvent">
         <methods>
-          <include name="tearDown"/>
-          <include name="jdbcclose"/>
-          <include name="insert"/>
-          <include name="extentteardown"/>
           <include name="jdbc"/>
+          <include name="insertnotifications"/>
+          <include name="extentteardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- CTD_E2E.transfer -->
+      </class> <!-- CTD_ContractTests.createIAEvent -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
