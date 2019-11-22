@@ -86,7 +86,7 @@ public class statute extends extentreport {
 		int maxtries = 2;
 
 		try {
-			exit: while (true) {
+			True: while (true) {
 				try {
 
 					System.out.println("..");
@@ -125,6 +125,8 @@ public class statute extends extentreport {
 						verifyNameInDynamics(access_token, idstring);
 
 						deleteevent.delete();
+						
+						break True;
 
 					}
 				} catch (SQLException e) {
@@ -186,6 +188,10 @@ public class statute extends extentreport {
 							"waited for 100 seconds and could not get a 200 status code from Dynamics. Please verify the problem and complete the test");
 				}
 
+			}
+			else
+			{
+				break exit;
 			}
 		}
 

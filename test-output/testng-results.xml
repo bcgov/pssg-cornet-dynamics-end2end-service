@@ -2,43 +2,43 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="176008" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:35Z">
+  <suite name="Default suite" duration-ms="125715" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:35:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="176008" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:35Z">
-      <class name="CTD_ContractTests.location">
-        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="setup" is-config="true" duration-ms="197" started-at="2019-11-18T21:58:38Z" finished-at="2019-11-18T21:58:39Z">
+    <test name="Default test" duration-ms="125715" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:35:31Z">
+      <class name="CTD_E2E.transferReason">
+        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="setup" is-config="true" duration-ms="148" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:33:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="jdbc" is-config="true" duration-ms="655" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T21:58:39Z">
+        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="jdbc" is-config="true" duration-ms="4745" started-at="2019-11-22T16:33:26Z" finished-at="2019-11-22T16:33:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- jdbc -->
-        <test-method status="PASS" signature="locaevent()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="locaevent" duration-ms="175284" started-at="2019-11-18T21:58:39Z" finished-at="2019-11-18T22:01:34Z">
+        <test-method status="PASS" signature="cdchanges()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="cdchanges" duration-ms="120866" started-at="2019-11-22T16:33:30Z" finished-at="2019-11-22T16:35:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- locaevent -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="tearDown" is-config="true" duration-ms="2" started-at="2019-11-18T22:01:34Z" finished-at="2019-11-18T22:01:34Z">
+        </test-method> <!-- cdchanges -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="tearDown" is-config="true" duration-ms="3" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=locaevent status=SUCCESS method=location.locaevent()[pri:0, instance:CTD_ContractTests.location@173f9fc] output={null}]]]>
+                <![CDATA[[TestResult name=cdchanges status=SUCCESS method=transferReason.cdchanges()[pri:0, instance:CTD_E2E.transferReason@1e3c938] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="jdbcclose" is-config="true" duration-ms="49" started-at="2019-11-18T22:01:34Z" finished-at="2019-11-18T22:01:35Z">
+        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="jdbcclose" is-config="true" duration-ms="64" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- jdbcclose -->
-        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_ContractTests.location@173f9fc]" name="extentteardown" is-config="true" duration-ms="456" started-at="2019-11-18T22:01:35Z" finished-at="2019-11-18T22:01:35Z">
+        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_E2E.transferReason@1e3c938]" name="extentteardown" is-config="true" duration-ms="323" started-at="2019-11-22T16:35:31Z" finished-at="2019-11-22T16:35:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentteardown -->
-      </class> <!-- CTD_ContractTests.location -->
+      </class> <!-- CTD_E2E.transferReason -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

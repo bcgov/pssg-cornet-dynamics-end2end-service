@@ -163,6 +163,8 @@ public class transfer extends extentreport {
 					{ cs_move_idstring, id, CNO, mty_cd, mry_cd, ac_dt_tm, TIMEST } };
 			m = MarkupHelper.createTable(insmove);
 			childTest.log(Status.INFO, m);
+			
+			insdmove.add(cs_move_idstring);
 
 			Thread.sleep(120000L);
 
@@ -219,6 +221,10 @@ public class transfer extends extentreport {
 							"waited for 100 seconds and could not get a 200 status code from Dynamics. Please verify the problem and complete the test");
 				}
 
+			}
+			else
+			{
+				break exit;
 			}
 		}
 
