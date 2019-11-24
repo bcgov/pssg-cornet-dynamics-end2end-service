@@ -63,7 +63,7 @@ public class clientmrg extends extentreport {
 	public delete_events delete_events = new delete_events();
 
 	@BeforeClass
-	public void jdbc() throws ClassNotFoundException, IOException {
+	private void jdbc() throws ClassNotFoundException, IOException {
 		try {
 			fis = new FileInputStream(Filepath);
 			prop.load(fis);
@@ -77,7 +77,7 @@ public class clientmrg extends extentreport {
 		}
 	}
 
-	@Test
+	@Test()
 	public void webdriver() throws InterruptedException, ClassNotFoundException, SQLException, IOException {
 
 		parentTest = extent.createTest(prop.getProperty("parent_extent"));
@@ -310,14 +310,13 @@ public class clientmrg extends extentreport {
 		ele.click();
 		Thread.sleep(3000L);
 		driverwait.until(ExpectedConditions.elementToBeClickable(By.id("tab4")));
-		driver.findElement(By.id("tab4")).click();
-		driverwait.until(ExpectedConditions.elementToBeClickable(By.id(
-				"id-9cc95fe1-6f0c-43ba-bec8-77cc4e5b41a3-25-ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text")));
-		driver.findElement(By.id(
-				"id-9cc95fe1-6f0c-43ba-bec8-77cc4e5b41a3-25-ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text"))
+		driver.findElement(By.id("tab3")).click();
+		driverwait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//textarea[@data-id='ssg_incidentdetails.fieldControl-text-box-text']")));
+		driver.findElement(By.xpath("//textarea[@data-id='ssg_incidentdetails.fieldControl-text-box-text']"))
 				.sendKeys("ff");
-		ele = driver.findElement(By.id(
-				"id-9cc95fe1-6f0c-43ba-bec8-77cc4e5b41a3-27-ssg_clientlogentrycompleted-ssg_clientlogentrycompleted.fieldControl-option-set-select"));
+		ele = driver
+				.findElement(By.xpath("//*[@data-id='ssg_clientlogentrycompleted.fieldControl-option-set-select']"));
 		Select s = new Select(ele);
 		s.selectByVisibleText("Yes");
 		Thread.sleep(3000L);
@@ -340,7 +339,7 @@ public class clientmrg extends extentreport {
 		driver.findElement(By.xpath("//*[@aria-label='Location  Lookup']")).sendKeys("L");
 		driver.findElement(By.xpath("//*[@aria-label='Location  one']")).click();
 		Thread.sleep(3000L);
-		driver.findElement(By.id("tab3")).click();
+		driver.findElement(By.id("tab4")).click();
 		driver.findElement(By.xpath("//*[@aria-label='Add New Involved Client - Custody Incident']")).click();
 		// driver.findElement(By.id("Location Lookup")).click();
 		// driver.findElement(By.id("Location Lookup")).sendKeys("L");
@@ -454,15 +453,24 @@ public class clientmrg extends extentreport {
 		driver.findElement(By.xpath("//button[@aria-label= 'Add New SC Daily Tracking']")).click();
 		Thread.sleep(3000L);
 		driverwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@aria-label='Save']")));
-		driver.findElement(By.xpath("//*[contains(@title, 'Save this SC Daily Tracking.')]")).click();
+		driver.findElement(By.xpath("//*[@aria-label='Save']")).click();
 		Thread.sleep(3000L);
 		((JavascriptExecutor) driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get("https://cb-icap.dev.jag.gov.bc.ca");
 		driverwait = new WebDriverWait(driver, 20);
-		driverwait.until(ExpectedConditions.visibilityOfElementLocated(By.name("TabHome")));
-		driver.findElement(By.name("TabHome")).click();
+		int eleref = 0;
+		exit: while (true) {
+			try {
+				driverwait.until(ExpectedConditions.visibilityOfElementLocated(By.name("TabHome")));
+				driver.findElement(By.name("TabHome")).click();
+				break exit;
+			} catch (StaleElementReferenceException e) {
+					if(eleref++==maxtries)
+						throw e;
+			}
+		}
 		driver.findElement(By.xpath("//*[@title='Settings']")).click();
 		// driver.findElement(By.xpath("//div[@id='detailActionGroupControl_leftNavContainer']/a")).click();
 		driverwait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Go to My Apps']")));
@@ -507,7 +515,7 @@ public class clientmrg extends extentreport {
 		driver.findElement(By.xpath("//input[@aria-label='Reporting Location  Lookup']")).sendKeys("F");
 
 		Thread.sleep(2000L);
-		driver.findElement(By.xpath("//li[@aria-label='Fort St. John']")).click();
+		driver.findElement(By.xpath("//li[contains(@aria-label,'Fort')]")).click();
 		Thread.sleep(2000L);
 		ele = driver.findElement(By.xpath("//div[@id='ssg_incidentlocationtype_i']/div[3]/div[2]"));
 		executor = (JavascriptExecutor) driver;
@@ -519,11 +527,11 @@ public class clientmrg extends extentreport {
 		s = new Select(driver.findElement(By.xpath("//select[@aria-label='Primary Incident Type']")));
 		s.selectByIndex(2);
 		driver.findElement(By.xpath(
-				"//textarea[contains(@id, 'ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text')]"))
-				.click();
-		driver.findElement(By.xpath(
-				"//textarea[contains(@id, 'ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text')]"))
-				.sendKeys("ff");
+				"//textarea[@data-id='ssg_incidentlocationtypedetails.fieldControl-text-box-text']"))
+		.sendKeys("ff");
+		//driver.findElement(By.xpath(
+			//	"//textarea[contains(@id, 'ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text')]"))
+				//.sendKeys("ff");
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
 				driver.findElement(By.xpath("//div[contains(@id, 'ssg_clientlogdescription')]")));
 
@@ -651,7 +659,6 @@ public class clientmrg extends extentreport {
 
 		}
 
-		
 	}
 
 	@AfterClass()

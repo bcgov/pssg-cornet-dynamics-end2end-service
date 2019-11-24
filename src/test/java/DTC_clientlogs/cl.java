@@ -114,7 +114,7 @@ public class cl extends extentreport{
 			}
 			else
 			{
-				Assert.assertFalse(false);
+				Assert.assertTrue(false);
 			}
 			
 		}	
