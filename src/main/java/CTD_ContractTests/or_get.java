@@ -943,7 +943,7 @@ public class or_get extends extentreport {
 		return datetime;
 	}
 	
-	public static String tstonemissing_or(String clno, String gd, String req_tstart_date, String req_tend_date, String req_tid, String req_ilocation, String req_lc_location_id, String req_cstatus)
+	public static String tstonemissing_or(String clno, String gd, String req_tstart_date, String req_tend_date, String req_tid, String req_ilocation, String req_lc_location_id, String req_cstatus, String req_lcom_location_id)
 			throws IOException, SQLException, ParseException {
 
 		fis = new FileInputStream(Filepath);
@@ -1000,6 +1000,7 @@ public class or_get extends extentreport {
 			BigDecimal tid= (BigDecimal) map.get(prop.getProperty("term_id"));
 			String ilocation=(String) map.get(prop.getProperty("ilocation"));
 			Float lc_location_id=(Float) map.get(prop.getProperty("lc_location_id"));
+			Float lcom_location_id=(Float) map.get(prop.getProperty("lcom_location_id"));
 			String cstatus=(String) map.get(prop.getProperty("cstatus"));
 			
 			File file = new File(
@@ -1021,15 +1022,26 @@ public class or_get extends extentreport {
 			}
 			Assert.assertEquals(req_ilocation, ilocation);
 			
-			if(req_lc_location_id== null) {
+			if(req_lc_location_id!= null) {
 				if(lc_location_id==null) {
-					
+					Assert.assertTrue(false, "location id failed");
 				}
 				else
 				{
 					Assert.assertEquals(req_lc_location_id, String.valueOf(lc_location_id));
 				}
 			}
+			
+			if(req_lcom_location_id!= null) {
+				if(lcom_location_id==null) {
+					Assert.assertTrue(false, "location id failed");
+				}
+				else
+				{
+					Assert.assertEquals(req_lcom_location_id, String.valueOf(lcom_location_id));
+				}
+			}
+			
 				
 			//Assert.assertEquals(req_lc_location_id, String.valueOf(lc_location_id));
 			Assert.assertEquals(req_cstatus, cstatus);

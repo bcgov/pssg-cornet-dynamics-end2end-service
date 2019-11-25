@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\183166\AppData\Local\Temp\testng-eclipse-1366644651\testng-customsuite.xml</span>
+                    <span>C:\Users\183166\AppData\Local\Temp\testng-eclipse-987769547\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="CTD_Cliemrg.clientmrg" hash-for-method="webdriver">webdriver</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="CTD_ContractTests.tombstonemissingfields" hash-for-method="testHandler">testHandler</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,18 +120,26 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">CTD_Cliemrg.clientmrg</span>
+              <span class="class-name">CTD_ContractTests.tombstonemissingfields</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="webdriver">
-                  </a> <!-- webdriver -->
-                  <span class="method-name">webdriver</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //li[@aria-label=&apos;Add New Involved Client - Community Incident&apos;] (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at CTD_Cliemrg.clientmrg.webdriver(clientmrg.java:562)
+                  <a name="testHandler">
+                  </a> <!-- testHandler -->
+                  <span class="method-name">testHandler</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [null] but found [332277]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:442)
+	at CTD_ContractTests.or_get.tstonemissing_or(or_get.java:1021)
+	at CTD_ContractTests.tombstonemissingfields.insertterms(tombstonemissingfields.java:394)
+	at CTD_ContractTests.tombstonemissingfields.insert_locations(tombstonemissingfields.java:233)
+	at CTD_ContractTests.tombstonemissingfields.insert_csclienames(tombstonemissingfields.java:142)
+	at CTD_ContractTests.tombstonemissingfields.tombstone(tombstonemissingfields.java:102)
+	at CTD_ContractTests.tombstonemissingfields.testHandler(tombstonemissingfields.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -157,19 +165,6 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //li[@aria-label=&apos;Add New Involved Client - Community Incident&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;CAVICSRGXFTVT2&apos;, ip: &apos;142.32.118.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 26 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -179,7 +174,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\183166\AppData\Local\Temp\testng-eclipse-1366644651\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\183166\AppData\Local\Temp\testng-eclipse-987769547\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -188,7 +183,7 @@ Driver info: driver.version: unknown
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;CTD_Cliemrg.clientmrg&quot;/&gt;
+      &lt;class name=&quot;CTD_ContractTests.tombstonemissingfields&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -230,14 +225,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'webdriver')
-data.setCell(0, 2, 'CTD_Cliemrg.clientmrg')
-data.setCell(0, 3, 347524);
+data.setCell(0, 1, 'testHandler')
+data.setCell(0, 2, 'CTD_ContractTests.tombstonemissingfields')
+data.setCell(0, 3, 45385);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 45 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -263,28 +258,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">CTD_Cliemrg.clientmrg</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">CTD_ContractTests.tombstonemissingfields</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-              <div class="configuration-class before">
-                <span class="method-name">jdbc</span>
-                <span class="method-start">356 ms</span>
-              </div> <!-- configuration-class before -->
+              <div class="configuration-test before">
+                <span class="method-name">connection</span>
+                <span class="method-start">518 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">webdriver</span>
-                <span class="method-start">1475 ms</span>
+                <span class="method-name">testHandler</span>
+                <span class="method-start">1529 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">jdbcclose</span>
-                <span class="method-start">349006 ms</span>
-              </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">extentteardown</span>
-                <span class="method-start">349170 ms</span>
+                <span class="method-start">46982 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

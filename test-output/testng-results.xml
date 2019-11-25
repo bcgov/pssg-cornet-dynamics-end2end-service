@@ -2,29 +2,37 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="348723" started-at="2019-11-24T20:26:44Z" finished-at="2019-11-24T20:32:33Z">
+  <suite name="Default suite" duration-ms="46405" started-at="2019-11-25T03:27:14Z" finished-at="2019-11-25T03:28:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="348723" started-at="2019-11-24T20:26:44Z" finished-at="2019-11-24T20:32:33Z">
-      <class name="CTD_Cliemrg.clientmrg">
-        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_Cliemrg.clientmrg@1e2dbf3]" name="setup" is-config="true" duration-ms="341" started-at="2019-11-24T20:26:43Z" finished-at="2019-11-24T20:26:44Z">
+    <test name="Default test" duration-ms="46405" started-at="2019-11-25T03:27:14Z" finished-at="2019-11-25T03:28:00Z">
+      <class name="CTD_ContractTests.tombstonemissingfields">
+        <test-method status="PASS" signature="setup()[pri:0, instance:CTD_ContractTests.tombstonemissingfields@c03f1f]" name="setup" is-config="true" duration-ms="515" started-at="2019-11-25T03:27:13Z" finished-at="2019-11-25T03:27:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="jdbc()[pri:0, instance:CTD_Cliemrg.clientmrg@1e2dbf3]" name="jdbc" is-config="true" duration-ms="1088" started-at="2019-11-24T20:26:44Z" finished-at="2019-11-24T20:26:45Z">
+        <test-method status="PASS" signature="connection()[pri:0, instance:CTD_ContractTests.tombstonemissingfields@c03f1f]" name="connection" is-config="true" duration-ms="953" started-at="2019-11-25T03:27:14Z" finished-at="2019-11-25T03:27:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- jdbc -->
-        <test-method status="FAIL" signature="webdriver()[pri:0, instance:CTD_Cliemrg.clientmrg@1e2dbf3]" name="webdriver" duration-ms="347524" started-at="2019-11-24T20:26:45Z" finished-at="2019-11-24T20:32:32Z">
-          <exception class="org.openqa.selenium.TimeoutException">
+        </test-method> <!-- connection -->
+        <test-method status="FAIL" signature="testHandler()[pri:0, instance:CTD_ContractTests.tombstonemissingfields@c03f1f]" name="testHandler" duration-ms="45385" started-at="2019-11-25T03:27:15Z" finished-at="2019-11-25T03:28:00Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //li[@aria-label='Add New Involved Client - Community Incident'] (tried for 20 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[expected [null] but found [332277]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //li[@aria-label='Add New Involved Client - Community Incident'] (tried for 20 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-at CTD_Cliemrg.clientmrg.webdriver(clientmrg.java:562)
+              <![CDATA[java.lang.AssertionError: expected [null] but found [332277]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:442)
+at CTD_ContractTests.or_get.tstonemissing_or(or_get.java:1021)
+at CTD_ContractTests.tombstonemissingfields.insertterms(tombstonemissingfields.java:394)
+at CTD_ContractTests.tombstonemissingfields.insert_locations(tombstonemissingfields.java:233)
+at CTD_ContractTests.tombstonemissingfields.insert_csclienames(tombstonemissingfields.java:142)
+at CTD_ContractTests.tombstonemissingfields.tombstone(tombstonemissingfields.java:102)
+at CTD_ContractTests.tombstonemissingfields.testHandler(tombstonemissingfields.java:70)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -50,34 +58,17 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //li[@aria-label='Add New Involved Client - Community Incident']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'CAVICSRGXFTVT2', ip: '142.32.118.159', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
-at java.util.Optional.orElseThrow(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- webdriver -->
-        <test-method status="PASS" signature="jdbcclose()[pri:0, instance:CTD_Cliemrg.clientmrg@1e2dbf3]" name="jdbcclose" is-config="true" duration-ms="56" started-at="2019-11-24T20:32:32Z" finished-at="2019-11-24T20:32:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- jdbcclose -->
-        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_Cliemrg.clientmrg@1e2dbf3]" name="extentteardown" is-config="true" duration-ms="679" started-at="2019-11-24T20:32:33Z" finished-at="2019-11-24T20:32:33Z">
+        </test-method> <!-- testHandler -->
+        <test-method status="PASS" signature="extentteardown()[pri:0, instance:CTD_ContractTests.tombstonemissingfields@c03f1f]" name="extentteardown" is-config="true" duration-ms="401" started-at="2019-11-25T03:28:00Z" finished-at="2019-11-25T03:28:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentteardown -->
-      </class> <!-- CTD_Cliemrg.clientmrg -->
+      </class> <!-- CTD_ContractTests.tombstonemissingfields -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

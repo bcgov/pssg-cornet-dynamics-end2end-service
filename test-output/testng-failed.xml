@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CTD_Cliemrg.clientmrg">
+      <class name="CTD_ContractTests.tombstonemissingfields">
         <methods>
-          <include name="jdbc"/>
-          <include name="webdriver"/>
+          <include name="testHandler"/>
+          <include name="connection"/>
           <include name="extentteardown"/>
-          <include name="jdbcclose"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- CTD_Cliemrg.clientmrg -->
+      </class> <!-- CTD_ContractTests.tombstonemissingfields -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
