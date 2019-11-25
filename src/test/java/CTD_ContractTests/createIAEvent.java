@@ -1,5 +1,7 @@
 package CTD_ContractTests;
 
+import static io.restassured.RestAssured.given;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -9,22 +11,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.junit.Assert;
+import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import static org.hamcrest.Matchers.*;
 
 import CTD_Extent_Report.extentreport;
+import io.restassured.response.Response;
 
 public class createIAEvent extends extentreport {
 	
@@ -55,7 +64,7 @@ public class createIAEvent extends extentreport {
 		}
 	}
 	
-	@Test()
+	@Test(enabled=false)
 	public void insertnotifications() throws SQLException, ClassNotFoundException, InterruptedException, ParseException, IOException
 	{
 		Set<String> clie_idstring=tombstone();
@@ -172,6 +181,59 @@ public class createIAEvent extends extentreport {
 
 		}
 
+	}
+	
+	@Test(enabled=false)
+	public void verifyords()
+	{
+		test = extent.createTest("createia_ords");
+		
+		String rccode = prop.getProperty("rccode");
+		Response res = given().header("Content-Type", "Application/json").queryParam("client_no", "05910658").and()
+				.queryParam("notification_id", "12279").when().get(prop.getProperty("or_edpt_createia")).then().assertThat()
+				.statusCode(200).extract().response();
+
+		ArrayList<Map<String, ?>> orget = res.path(prop.getProperty("or_root"));
+
+		Map<String, ?> map = orget.get(0);
+		
+		Float f=(float) 271.0005;
+
+		Assert.assertEquals(f, ((Float)map.get(prop.getProperty("lcli"))));
+		Assert.assertEquals("Sentenced", map.get("reason"));
+		
+	}
+	
+	@Test()
+	public void verifyadapter()
+	{
+		test = extent.createTest("createia_adapter");
+	
+		Response res = given().header("Content-Type", "Application/json").body(prop.getProperty("da_createia_payload"))
+				.when().post(prop.getProperty("da_createia_edpt")).then().assertThat().statusCode(200)
+				.body(prop.getProperty("stat"), is(204)).extract().response();
+	
+	}
+	
+	@AfterMethod
+	public void tearDown(ITestResult result) {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL,
+					"Test Fail: Log defect <a href=\"http://abcd.efg.com\" target=\"_blank\">Log Defect</a>");
+			test.fail(result.getThrowable());
+
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, MarkupHelper.createLabel("Test passed", colour.GREEN));
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			test.log(Status.PASS, MarkupHelper.createLabel("Test skipped", colour.YELLOW));
+			test.log(Status.SKIP, result.getThrowable());
+		}
+	}
+
+	@AfterClass()
+	public void jdbcclose() throws SQLException {
+		conn.close();
 	}
 
 }

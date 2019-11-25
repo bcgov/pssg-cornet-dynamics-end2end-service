@@ -23,7 +23,7 @@ public class inscscliefn {
 	public String Filepath = System.getProperty("user.dir") + "/Properties/cornet.properties";
 	public delete_events deleteevent = new delete_events();
 	
-	@Test(invocationCount=200)
+	@Test()
 	public void insert_into_csclie() throws ClassNotFoundException, SQLException, IOException {
 		// TODO Auto-generated method stub
 		
