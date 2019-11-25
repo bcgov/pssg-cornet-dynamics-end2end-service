@@ -573,7 +573,7 @@ public class tombstonemissingfields extends extentreport {
 
 	}
 
-	private void update_kdty(String keyDateIdString, BigDecimal termid, String CNO) {
+	private void update_kdty(String keyDateIdString, BigDecimal termid, String CNO) throws IOException, SQLException, ParseException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Statement s = conn.createStatement();
 		String TIMEST = null;
@@ -583,8 +583,8 @@ public class tombstonemissingfields extends extentreport {
 		s.executeQuery(prop.getProperty("updateKDTY").replaceAll("\\{key_id\\}", String.valueOf(keyDateIdString)));
 		conn.commit();
 
-		ResultSet tsrp = s
-				.executeQuery(prop.getProperty("selectUpdatedKeyDate").replaceAll("\\{key_id\\}", String.valueOf(keyDateIdString)));
+		ResultSet tsrp = s.executeQuery(
+				prop.getProperty("selectUpdatedKeyDate").replaceAll("\\{key_id\\}", String.valueOf(keyDateIdString)));
 
 		if (tsrp.next()) {
 
@@ -603,8 +603,8 @@ public class tombstonemissingfields extends extentreport {
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel(prop.getProperty("db_get"), colour.BLUE));
 			new or_get();
-			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-28", null, String.valueOf(termid),
-					null, null, "Active - In", null);
+			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-28", null, String.valueOf(termid), null, null,
+					"Active - In", null);
 
 			/*
 			 * childTest.log(Status.INFO,
@@ -618,7 +618,7 @@ public class tombstonemissingfields extends extentreport {
 			childTest.log(Status.PASS, MarkupHelper.createLabel("The Fetched_date was updated", colour.GREEN));
 
 			deleteevent.delete();
-		
-		
+
+		}
 	}
 }
