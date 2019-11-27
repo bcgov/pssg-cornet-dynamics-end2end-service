@@ -11,7 +11,10 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.util.Properties;
 
+import org.testng.ITestResult;
 import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -379,7 +382,7 @@ public class tombstonemissingfields extends extentreport {
 			termid = trs.getBigDecimal("id");
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel("Step: Verifying Unprocessed Response", colour.BLUE));
-			String gd = unprocessed.exampleGetTest(TIMEST, "CLIENT_IA", CNO, null, "NULL");
+			String gd = unprocessed.exampleGetTest(TIMEST, "TOMBSTONE", CNO, null, "NULL");
 			childTest.log(Status.PASS,
 					MarkupHelper.createLabel("An Event was triggered for the requested details", colour.GREEN));
 
@@ -391,7 +394,7 @@ public class tombstonemissingfields extends extentreport {
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel(prop.getProperty("db_get"), colour.BLUE));
 			new or_get();
-			String datetime = or_get.tstonemissing_or(CNO, gd, null, null, String.valueOf(termid), null, "458.0005",
+			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-21", null, String.valueOf(termid), null, "458.0005",
 					"Active - In", null);
 
 			/*
@@ -407,8 +410,9 @@ public class tombstonemissingfields extends extentreport {
 
 			deleteevent.delete();
 
-			updateend_dt(termid, CNO);
+			
 			key_date_insert(CNO, id, termid);
+			//updateend_dt(termid, CNO);
 
 		}
 
@@ -425,7 +429,7 @@ public class tombstonemissingfields extends extentreport {
 		conn.commit();
 
 		ResultSet tsrp = s
-				.executeQuery(prop.getProperty("selectend_dt").replaceAll("\\{termid\\}", String.valueOf(termid)));
+				.executeQuery(prop.getProperty("selectend_dt").replaceAll("\\{clie_id\\}", String.valueOf(termid)));
 
 		if (tsrp.next()) {
 			TIMEST = tsrp.getString("TIMEST");
@@ -497,7 +501,7 @@ public class tombstonemissingfields extends extentreport {
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel(prop.getProperty("db_get"), colour.BLUE));
 			new or_get();
-			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-28", "2004-APR-04", String.valueOf(termid),
+			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-21", "2004-04-04", String.valueOf(termid),
 					null, null, "Active - In", null);
 
 			/*
@@ -551,7 +555,7 @@ public class tombstonemissingfields extends extentreport {
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel(prop.getProperty("db_get"), colour.BLUE));
 			new or_get();
-			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-28", "2018-APR-04", String.valueOf(termid),
+			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-21", "2018-04-04", String.valueOf(termid),
 					null, null, "Active - In", null);
 
 			/*
@@ -573,7 +577,8 @@ public class tombstonemissingfields extends extentreport {
 
 	}
 
-	private void update_kdty(String keyDateIdString, BigDecimal termid, String CNO) throws IOException, SQLException, ParseException, ClassNotFoundException {
+	private void update_kdty(String keyDateIdString, BigDecimal termid, String CNO)
+			throws IOException, SQLException, ParseException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Statement s = conn.createStatement();
 		String TIMEST = null;
@@ -603,7 +608,7 @@ public class tombstonemissingfields extends extentreport {
 
 			childTest.log(Status.INFO, MarkupHelper.createLabel(prop.getProperty("db_get"), colour.BLUE));
 			new or_get();
-			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-28", null, String.valueOf(termid), null, null,
+			String datetime = or_get.tstonemissing_or(CNO, gd, "2018-05-21", null, String.valueOf(termid), null, null,
 					"Active - In", null);
 
 			/*
@@ -620,5 +625,26 @@ public class tombstonemissingfields extends extentreport {
 			deleteevent.delete();
 
 		}
+	}
+
+	@AfterMethod
+	public void tearDown(ITestResult result) {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			parentTest.log(Status.FAIL,
+					"Test Fail: Log defect <a href=\"http://abcd.efg.com\" target=\"_blank\">Log Defect</a>");
+			parentTest.fail(result.getThrowable());
+
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			parentTest.log(Status.PASS, MarkupHelper.createLabel("Test passed", colour.GREEN));
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			parentTest.log(Status.PASS, MarkupHelper.createLabel("Test skipped", colour.YELLOW));
+			parentTest.log(Status.SKIP, result.getThrowable());
+		}
+	}
+
+	@AfterClass()
+	public void jdbcclose() throws SQLException {
+		conn.close();
 	}
 }

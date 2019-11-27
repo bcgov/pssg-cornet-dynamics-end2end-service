@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CTD_ContractTests.tombstonemissingfields">
+      <class name="CTD_ContractTests.iaterms">
         <methods>
-          <include name="testHandler"/>
           <include name="connection"/>
+          <include name="iaterms"/>
           <include name="extentteardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- CTD_ContractTests.tombstonemissingfields -->
+      </class> <!-- CTD_ContractTests.iaterms -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

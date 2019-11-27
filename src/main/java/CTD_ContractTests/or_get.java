@@ -997,7 +997,7 @@ public class or_get extends extentreport {
 
 			String tstart_date=(String) map.get(prop.getProperty("tstart_date"));
 			String tend_date=(String) map.get(prop.getProperty("tend_date"));
-			BigDecimal tid= (BigDecimal) map.get(prop.getProperty("term_id"));
+			Integer tid= (Integer) map.get(prop.getProperty("term_id"));
 			String ilocation=(String) map.get(prop.getProperty("ilocation"));
 			Float lc_location_id=(Float) map.get(prop.getProperty("lc_location_id"));
 			Float lcom_location_id=(Float) map.get(prop.getProperty("lcom_location_id"));
