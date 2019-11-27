@@ -64,9 +64,12 @@ public class createIAEvent extends extentreport {
 		}
 	}
 	
-	@Test(enabled=false)
+	@Test()
 	public void insertnotifications() throws SQLException, ClassNotFoundException, InterruptedException, ParseException, IOException
 	{
+		test = extent.createTest("create ia Event");
+		//test.assignCategory("End to End");
+		
 		Set<String> clie_idstring=tombstone();
 		
 		Iterator<String> it=clie_idstring.iterator();
@@ -102,8 +105,6 @@ public class createIAEvent extends extentreport {
 	
 	public Set<String> tombstone() throws SQLException, InterruptedException, ClassNotFoundException, ParseException, IOException
 	{
-		parentTest = extent.createTest("Tombstone Event");
-		parentTest.assignCategory("End to End");
 		
 		Statement s = conn.createStatement();
 		ResultSet rs = null;
@@ -167,7 +168,7 @@ public class createIAEvent extends extentreport {
 
 				String[][] responsetable = { { "id", "clie_id", "ent_dt" }, { clieidstring, idstring, TIMEST } };
 				m = MarkupHelper.createTable(responsetable);
-				parentTest.log(Status.INFO, m);
+				test.log(Status.INFO, m);
 				
 				Thread.sleep(120000L);
 
@@ -183,7 +184,7 @@ public class createIAEvent extends extentreport {
 
 	}
 	
-	@Test(enabled=false)
+	@Test()
 	public void verifyords()
 	{
 		test = extent.createTest("createia_ords");

@@ -524,11 +524,21 @@ public class clientmrg extends extentreport {
 		// driver.findElement(By.xpath("//input[@aria-label='Enter a value to filter on,
 		// or select enter to show available options.']")).click();
 		driver.findElement(By.xpath("//label[@title='Comm Office - Lobby/Reception']")).click();
-		s = new Select(driver.findElement(By.xpath("//select[@aria-label='Primary Incident Type']")));
-		s.selectByIndex(2);
+		/*driver.findElement(By.xpath(
+				"//textarea[@data-id='ssg_incidentlocationtypedetails.fieldControl-text-box-text']")).click();
+		
 		driver.findElement(By.xpath(
 				"//textarea[@data-id='ssg_incidentlocationtypedetails.fieldControl-text-box-text']"))
-		.sendKeys("ff");
+		.sendKeys("ff");*/
+		s = new Select(driver.findElement(By.xpath("//select[@aria-label='Primary Incident Type']")));
+		s.selectByIndex(2);
+		
+		Thread.sleep(2000L);
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.xpath("//*[@data-id='ssg_incidentdetails.fieldControl-text-box-text']")));
+		
+		driver.findElement(By.xpath("//*[@data-id='ssg_incidentdetails.fieldControl-text-box-text']")).sendKeys("ff");
 		//driver.findElement(By.xpath(
 			//	"//textarea[contains(@id, 'ssg_incidentdetails-ssg_incidentdetails.fieldControl-text-box-text')]"))
 				//.sendKeys("ff");
@@ -558,6 +568,8 @@ public class clientmrg extends extentreport {
 			}
 			idcount++;
 		}
+		
+		//driver.findElement(By.xpath("//*[@aria-label='Save']")).click();
 
 		driverwait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//li[@aria-label='Add New Involved Client - Community Incident']")));
@@ -572,7 +584,7 @@ public class clientmrg extends extentreport {
 		s = new Select(ele);
 		s.selectByVisibleText("Instigator");
 		Thread.sleep(1000L);
-		driver.findElement(By.xpath("//*[@aria-label='Save']")).click();
+		driver.findElement(By.xpath("//*[@data-id='quickCreateSaveBtn']")).click();
 		Thread.sleep(10000L);
 		driver.quit();
 

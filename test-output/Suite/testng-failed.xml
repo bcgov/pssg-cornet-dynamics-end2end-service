@@ -3,15 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="CTD_Cliemrg.clientmrg">
+      <class name="DTC_clientlogs.cl">
         <methods>
-          <include name="jdbc"/>
-          <include name="webdriver"/>
           <include name="extentteardown"/>
           <include name="jdbcclose"/>
+          <include name="dynamicstocornet"/>
+          <include name="tearDown"/>
+          <include name="jdbc"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- CTD_Cliemrg.clientmrg -->
+      </class> <!-- DTC_clientlogs.cl -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
